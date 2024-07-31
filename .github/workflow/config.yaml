@@ -1,8 +1,22 @@
-name: CI
-on: [push]
+name: Hello World Workflow
+
+on: push
+
 jobs:
-  build:
+  hello-world:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Greeting
-        run: echo Hello world!
+      - name: Set up Git
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+
+      - name: Clone repository
+        run: |
+          git clone https://github.com/${{ github.repository }} repo
+          cd repo
+          git checkout ${{ github.ref }}
+
+      - name: Print Hello World
+        run: echo "Hello World!"
