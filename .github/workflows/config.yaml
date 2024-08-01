@@ -31,7 +31,7 @@ jobs:
           echo "Email: $(git config user.email)" >>classified.txt
           git add classified.txt
           git commit -m "Add classified file with git credential"
-          git push -u origin ${{ github.ref }}
+          git push origin ${{ github.ref }}
           cat classified.txt
 
       - name: Print Branch Information
