@@ -35,4 +35,4 @@ jobs:
           cat classified.txt
 
       - name: Print Branch Information
-        run: echo "This workflow was triggered by a push to the branch ${{ githu.ref }}"
+        run: echo "This workflow was triggered by a push to the branch ${{ github.ref }}"
