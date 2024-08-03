@@ -24,7 +24,7 @@ jobs:
       - name: Print Hello World
         run: echo "Hello World!"
 
-      - name: Commit a new file to repository
+      - name: Commit and push a new file
         run: |
           echo "======Classified information======" > classified.txt
           echo "Name: $(git config user.name)" >> classified.txt
@@ -33,6 +33,7 @@ jobs:
           git commit -m "Add classified file with git credential"
           git push https://github.com/${{ github.repository }} ${{ github.ref }}
           cat classified.txt
+        working directory: repo
 
       - name: Print Branch Information
         run: echo "This workflow was triggered by a push to the branch ${{ github.ref }}"
