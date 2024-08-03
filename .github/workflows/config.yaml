@@ -27,6 +27,7 @@ jobs:
           curl -X POST -H 'Content-Type: application/json' -d 
           '{"text": "A push event occurred on branch: '${GITHUB_REF#refs/heads}'"}' 
           $SLACK_WEBHOOK_URL
+          echo 'Notification sent to Slack'
 
       - name: Print Hello World
         run: echo "Hello World!"
