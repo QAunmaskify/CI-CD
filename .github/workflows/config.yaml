@@ -9,6 +9,9 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
 
+    env:
+      GIT_ASKPASS: /bin/echo
+
     steps:
       - name: Set up Git
         run: |
