@@ -31,7 +31,7 @@ jobs:
           echo "Email: $(git config user.email)" >>classified.txt
           git add classified.txt
           git commit -m "Add classified file with git credential"
-          git push https://${{ secrets.GITHUB.TOKEN }}@github.com/${{ github.repository }} ${{ github.ref }}
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} ${{ github.ref }}
           cat classified.txt
         working-directory: repo
 
