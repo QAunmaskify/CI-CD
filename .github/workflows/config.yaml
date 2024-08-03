@@ -3,7 +3,7 @@ name: Git Operations
 on: push
 
 jobs:
-  Git Flow Process:
+  Git-Flow-Process:
     runs-on: ubuntu-latest
 
     steps:
