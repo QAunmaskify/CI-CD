@@ -9,9 +9,6 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
 
-    env:
-      GIT_ASKPASS: /bin/echo
-
     steps:
       - name: Set up Git
         run: |
@@ -37,6 +34,8 @@ jobs:
           git push https://github.com/${{ github.repository }} ${{ github.ref }}
           cat classified.txt
         working-directory: repo
+        env:
+          GIT_ASKPASS: /bin/echo
 
       - name: Print Branch Information
         run: echo "This workflow was triggered by a push to the branch ${{ github.ref }}"
