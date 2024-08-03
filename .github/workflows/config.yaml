@@ -25,6 +25,8 @@ jobs:
         run: echo "Hello World!"
 
       - name: Commit and push a new file
+        env:
+          GIT_ASKPASS: /bin/echo
         run: |
           echo "======Classified information======" > classified.txt
           echo "Name: $(git config user.name)" >> classified.txt
@@ -34,8 +36,6 @@ jobs:
           git push https://github.com/${{ github.repository }} ${{ github.ref }}
           cat classified.txt
         working-directory: repo
-        env:
-          GIT_ASKPASS: /bin/echo
 
       - name: Print Branch Information
         run: echo "This workflow was triggered by a push to the branch ${{ github.ref }}"
