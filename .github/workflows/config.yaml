@@ -16,7 +16,8 @@ jobs:
         run: |
           git clone https://github.com/${{ github.repository }} repo
           cd repo
-          git checkout ${{ github.ref }}
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          git checkout $BRANCH_NAME
 
       - name: Print Hello World
         run: echo "Hello World!"
