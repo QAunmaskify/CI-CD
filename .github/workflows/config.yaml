@@ -33,7 +33,7 @@ jobs:
           git commit -m "Add classified file with git credential"
           git push https://github.com/${{ github.repository }} ${{ github.ref }}
           cat classified.txt
-        working directory: repo
+        working-directory: repo
 
       - name: Print Branch Information
         run: echo "This workflow was triggered by a push to the branch ${{ github.ref }}"
