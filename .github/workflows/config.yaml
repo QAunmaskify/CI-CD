@@ -1,9 +1,9 @@
-name: Hello World Workflow
+name: Git Operations
 
 on: push
 
 jobs:
-  hello-world:
+  Git Flow Process:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,8 @@ jobs:
           git clone https://github.com/${{ github.repository }} repo
           cd repo
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          git checkout $BRANCH_NAME
+          # git checkout $BRANCH_NAME
+          echo $BRANCH_NAME
 
       - name: Print Hello World
         run: echo "Hello World!"
